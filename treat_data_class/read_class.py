@@ -29,4 +29,7 @@ class Pnboia_read(object):
 			self.dt.append(datetime.strptime(dt, '%Y-%m-%d %H:%M:%S'))
 
 if __name__ == '__main__':
-	pass
+	file ='file'
+	pn = Pnboia_read(file)
+	pn.get_attributes_from_data()
+	pn.datetime()

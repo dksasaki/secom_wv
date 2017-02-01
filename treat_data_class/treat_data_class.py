@@ -5,15 +5,15 @@ from datetime import datetime
 
 
 class Filters(object):
-	def __init__(self,np=11,fill_value=-99999):
+	def __init__(self,n=11,fill_value=-99999):
 		self.n = n
 		self.fill_value = fill_value
 
 	def filter_median_data(self,var):
 		if self.n % 2 == 1:
 			varb = []
-			n1   = self.n
-			n2   = self.n+1
+			n1   = self.n/2
+			n2   = self.n/2+1
 			for i in range(n1,np.size(var)-n2):
 				varb.append(np.nanmedian(var[i-n1:i+n2]))
 			return varb
