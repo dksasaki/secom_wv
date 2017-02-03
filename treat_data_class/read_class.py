@@ -16,6 +16,12 @@ class Pnboia_read(object):
 		self.open_dataset = open_dataset
 		self.pnboia   = None
 
+	def pnboia_csv(name):
+		self.pnboia = self.read_csv(name)
+
+	def pnboia_nc(name):
+		self.pnboia = self.open_dataset(name)
+
 
 	def get_attributes_from_data(self):
 		"""
@@ -51,6 +57,6 @@ class Pnboia_read(object):
 if __name__ == '__main__':
 	file ='file'
 	pn = Pnboia_read()
-	pn.read_csv(file)
+	pn.pnboia_csv(file)
 	pn.get_attributes_from_data()
 	pn.datetime()
