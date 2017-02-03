@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 #######################################################
 ### Codigo para procurar pontos da grade proximos   ###
 ### a uma coordenada específica (boia, por exemplo) ###
