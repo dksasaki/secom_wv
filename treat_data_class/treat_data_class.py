@@ -10,6 +10,27 @@ class Filters(object):
 		self.fill_value = fill_value
 
 	def filter_median_data(self,var):
+		"""
+		median filter of the data
+		set the window filter size by defining Filter(var,n=11),
+		where n is the size of the window
+
+		Example 1:
+		import numpy as np
+
+		a = np.random.randn(40)
+		f = Filters()
+		f.filter_median_data(a)
+
+
+		Example 2:
+		import numpy as np
+
+		a = np.random.randn(40)
+		f = Filters()
+		f.filter_median_data(a,n=5)
+
+		"""
 		if self.n % 2 == 1:
 			varb = []
 			n1   = self.n/2
@@ -26,14 +47,13 @@ class Filters(object):
 		return varb
 
 	def cut_interval_by_index(self,var):
-		n1   = self.n
-		n2   = self.n+1
+		n1   = self.n/2
+		n2   = self.n/2+1
 
 		varb = var[n1:-n2]
 		return varb
 
 if __name__ == '__main__':
-	from pydap.client import open_url
 	import matplotlib.pyplot as pl
 	import xarray as xr
 	buoy = xr.open_dataset('http://opendap.saltambiental.com.br:8080/pnboia/Bsantos.nc')
