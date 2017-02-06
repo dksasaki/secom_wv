@@ -26,8 +26,8 @@ def procurar_pontos_grade( x , y , xm , ym , n=1):
     procurar_pontos_grade(x,y,xm,ym,n=2)
     """
     dist = np.full_like(xm , np.nan)
-    for i in range(np.size(lon,0) ):
-        for j in range(np.size(lon,1)):
+    for i in range(np.size(xm,0) ):
+        for j in range(np.size(xm,1)):
             dist[i,j] =  (xm[i,j] - x)**2 + (ym[i,j] - y)**2
 
 

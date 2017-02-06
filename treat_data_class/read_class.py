@@ -16,10 +16,10 @@ class Pnboia_read(object):
 		self.open_dataset = open_dataset
 		self.pnboia   = None
 
-	def pnboia_csv(name):
+	def pnboia_csv(self,name):
 		self.pnboia = self.read_csv(name)
 
-	def pnboia_nc(name):
+	def pnboia_nc(self,name):
 		self.pnboia = self.open_dataset(name)
 
 
